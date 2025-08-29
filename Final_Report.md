@@ -7,8 +7,8 @@
 
 This summer, I contributed to [cBioportal](https://www.cbioportal.org/) by integrating novel quantitative visualizations for Variant Allele Frequency (VAF) into its core cohort analysis tools. Under the guidance of my mentor [Onur Sumer](https://github.com/onursumer) I focused on bridging a key gap between the qualitative and quantitative analysis of genomic data. I implemented two major features: enabling the Plots Tab to generate box plots of VAF for distributional analysis across clinical groups, and introducing a new VAF heatmap track to the OncoPrint. These enhancements empower researchers to more effectively analyze tumor heterogeneity directly within the [Plots tab](https://www.cbioportal.org/study/plots?id=msk_impact_2017) and [Oncoprint](https://www.cbioportal.org/results/oncoprint?cancer_study_list=msk_impact_2017&Z_SCORE_THRESHOLD=2.0&RPPA_SCORE_THRESHOLD=2.0&profileFilter=mutations&case_set_id=msk_impact_2017_cnaseq&gene_list=TP53&geneset_list=%20&tab_index=tab_visualize&Action=Submit), ultimately providing a more comprehensive and intuitive data exploration experience.
 
-**GitHub Issue**: [Show Variant Allele Frequency on the Plots tab and Oncoprint](https://github.com/cBioPortal/GSoC/issues/122) 
-**Technologies**: JavaScript, TypeScript, React
+* **Project Issue**: [Show Variant Allele Frequency on the Plots tab and Oncoprint](https://github.com/cBioPortal/GSoC/issues/122) 
+* **Technologies**: JavaScript, TypeScript, React, MobX
 
 <table>
   <tr>
@@ -25,19 +25,18 @@ While cBioPortal excels at displaying the qualitative nature of mutations (e.g.,
 
 ## 2. Motivation and Project Goals
 
-The motivation for this project was to bridge the critical gap between qualitative and quantitative mutation analysis within cBioPortal's core cohort-level tools. While researchers could see what kind of mutations were present, they lacked the integrated tools to visualize how prevalent those mutations were across entire patient groups. This prevented a deeper, more immediate understanding of tumor heterogeneity and clonality.
+### Plots Tab 📊
+- Researchers could not plot the distribution of VAF for mutation datatype across different clinical groups (e.g., Cancer Types). Analysis was   limited to categorical data (like Mutation Type), preventing quantitative comparisons of VAF
 
-The project's goals were designed to directly address these challenges in the two main components where this gap was most evident:
+- **Goal:** Enable plotting VAF as a continuous variable, allowing box/scatter plots for direct quantitative comparisons across groups.
 
-### Enhancing the Plots Tab
-- The Challenge: In the Plots Tab, researchers could not plot the distribution of VAF for a mutation across different clinical groups (e.g., Cancer Types). As shown in the "before" state, analysis was limited to categorical data like "Mutation Type," which prevented direct quantitative comparisons of VAF.   
+### OncoPrint 🧬
 
-- Project Goal: The primary goal was to extend the mutation data type to incorporate Variant Allele Frequency (VAF), facilitating the plotting of VAF as a continuous variable. This enhancement empowers researchers to generate box plots and scatter plots, allowing them to directly visualize and compare the distribution of VAF for a gene of interest across different clinical or genomic categories for the first time.   
+- The OncoPrint is one of cBioPortal's most iconic views, giving a brilliant summary of which genes are altered in which patients. You can see the type of alteration—a missense mutation, an amplification, and so on. Users could see mutation types but not their VAF, forcing them to check patient-level pages and losing the cohort context.
 
-### Enriching the OncoPrint
-- The Challenge: In the OncoPrint, researchers could see the type of mutation but could not see its corresponding VAF in the main cohort-level view. This forced researchers to navigate away to individual patient pages to find VAF, thereby losing the valuable cohort-wide context and making it difficult to spot patterns across the group.   
+- **Goal:** Add a dedicated VAF heatmap track to the OncoPrint, enabling visualization of mutation type and prevalence side-by-side in one unified view.
 
-- Project Goal: The second major goal was to add heatmap tracks to display VAF alongside mutation types for each gene-sample pair. This feature provides a critical layer of quantitative data directly within the OncoPrint. It allows for the simultaneous observation of both the mutation type and its VAF in a single, unified view, dramatically improving the efficiency of identifying important genomic patterns.
+Together, these enhancements bridge the gap between qualitative and quantitative mutation analysis, providing richer insights into tumor clonality within cBioPortal’s core analysis tools.ns.
 
 ## 3. Work Done
 
@@ -47,7 +46,7 @@ I had weekly meets with both my mentor where I showcased my progress. All my wor
 
 ### 3.1. Pull Requests Created during GSoC
 
-1. **[Add Variant Allele Frequency on Plots tab](https://github.com/cBioPortal/cbioportal-frontend/pull/5209)**
+1. **[Add Variant Allele Frequency on Plots tab ](https://github.com/cBioPortal/cbioportal-frontend/pull/5209)**
 
 **Description:** This feature enhances the Plots Tab by allowing researchers to visualize Variant Allele Frequency (VAF) as a continuous numerical value. For the first time, users can now generate box plots to see the distribution of VAF for a specific gene across different categories, such as cancer types, enabling direct quantitative comparisons.
 
@@ -103,9 +102,7 @@ My work not only involved creating new features but also included fixing bugs, w
 
 ## 4. Future goals
 
-During the coding period, I successfully completed all the features outlined in my proposal. However, there is still work to be done, and I plan to continue refining and improving the charts and features I developed.
-
-My future goals include ongoing contributions to cBioPortal, particularly enhancing the Study View page by making the new charts even more robust and user-friendly. I also aim to propose and develop additional chart types, such as Area Charts and Candlestick Charts, to further expand the variety of visualizations available on the Study View page.
+During the GSoC coding period, I successfully completed all the features outlined in my proposal, including VAF integration in both the Plots Tab and OncoPrint. However, there is still room for refinement and extension. I plan to continue contributing to cBioPortal beyond GSoC, actively maintaining and enhancing the features I developed and exploring new opportunities to add value to the project.
 
 ## 5. Acknowledgment
 
