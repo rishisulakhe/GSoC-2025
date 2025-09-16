@@ -3,12 +3,10 @@
 * **Name: [Rishi Prasad Sulakhe](https://github.com/rishisulakhe)**
 * **Project: [Show Variant Allele Frequency on the Plots tab and Oncoprint](https://summerofcode.withgoogle.com/programs/2025/projects/8scNjJhi)**
 * **Organization: [cBioPortal for Cancer Genomics](https://summerofcode.withgoogle.com/programs/2025/organizations/cbioportal-for-cancer-genomics)**
-* **Mentor: [Onur Sumer](https://github.com/onursumer)**
+* **Mentor: [Onur Sumer](https://github.com/onursumer)** 
+* **Technologies**: JavaScript, TypeScript, React, MobX
 
 This summer, I contributed to [cBioportal](https://www.cbioportal.org/) by integrating novel quantitative visualizations for Variant Allele Frequency (VAF) into its core cohort analysis tools. Under the guidance of my mentor [Onur Sumer](https://github.com/onursumer) I focused on bridging a key gap between the qualitative and quantitative analysis of genomic data. I implemented two major features: enabling the Plots Tab to generate box plots of VAF for distributional analysis across clinical groups, and introducing a new VAF heatmap track to the OncoPrint. These enhancements empower researchers to more effectively analyze tumor heterogeneity directly within the [Plots tab](https://www.cbioportal.org/study/plots?id=msk_impact_2017) and [Oncoprint](https://www.cbioportal.org/results/oncoprint?cancer_study_list=msk_impact_2017&Z_SCORE_THRESHOLD=2.0&RPPA_SCORE_THRESHOLD=2.0&profileFilter=mutations&case_set_id=msk_impact_2017_cnaseq&gene_list=TP53&geneset_list=%20&tab_index=tab_visualize&Action=Submit), ultimately providing a more comprehensive and intuitive data exploration experience.
-
-* **Project Issue**: [Show Variant Allele Frequency on the Plots tab and Oncoprint](https://github.com/cBioPortal/GSoC/issues/122) 
-* **Technologies**: JavaScript, TypeScript, React, MobX
 
 <table>
   <tr>
@@ -36,7 +34,7 @@ While cBioPortal excels at displaying the qualitative nature of mutations (e.g.,
 
 - **Goal:** Add a dedicated VAF heatmap track to the OncoPrint, enabling visualization of mutation type and prevalence side-by-side in one unified view.
 
-Together, these enhancements bridge the gap between qualitative and quantitative mutation analysis, providing richer insights into tumor clonality within cBioPortal’s core analysis tools.ns.
+Together, these enhancements bridge the gap between qualitative and quantitative mutation analysis, providing richer insights into tumor clonality within cBioPortal’s core analysis tools.
 
 ## 3. Work Done
 
@@ -46,7 +44,7 @@ I had weekly meets with both my mentor where I showcased my progress. All my wor
 
 ### 3.1. Pull Requests Created during GSoC
 
-1. **[Add Variant Allele Frequency on Plots tab ](https://github.com/cBioPortal/cbioportal-frontend/pull/5209)**
+1. **[Add Variant Allele Frequency on Plots tab #5209 ](https://github.com/cBioPortal/cbioportal-frontend/pull/5209)**
 
 **Description:** This feature enhances the Plots Tab by allowing researchers to visualize Variant Allele Frequency (VAF) as a continuous numerical value. For the first time, users can now generate box plots to see the distribution of VAF for a specific gene across different categories, such as cancer types, enabling direct quantitative comparisons.
 
@@ -66,7 +64,7 @@ My approach was to seamlessly integrate this new functionality into the existing
 **Challenges Faced:**
 A significant challenge was handling studies that do not contain the necessary read count data required for VAF calculation. In these cases, my initial implementation would attempt to render a plot with empty or "NaN" (Not a Number) values, which was confusing for the user. To solve this, I implemented a pre-check that verifies if the selected study contains valid VAF data for the chosen gene. If no data is available, the system now gracefully displays a "No data available" message instead of an empty or broken chart, ensuring a much better user experience.
 
-2. **[Add Variant Allele Frequency Heatmap in Oncoprint](https://github.com/cBioPortal/cbioportal-frontend/pull/5237)**
+2. **[Add Variant Allele Frequency Heatmap in Oncoprint #5237](https://github.com/cBioPortal/cbioportal-frontend/pull/5237)**
 
 **Description:** 
 This feature enriches the OncoPrint by introducing a new, user-configurable VAF heatmap track. It provides a critical quantitative layer to the OncoPrint, allowing researchers to see both a mutation's type (e.g., missense) and its VAF simultaneously in the main cohort view. This helps in quickly distinguishing between foundational, high-VAF mutations and minor, subclonal events.
